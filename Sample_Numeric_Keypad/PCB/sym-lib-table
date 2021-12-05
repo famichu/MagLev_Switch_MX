@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Seeeduino_XIAO)(type Legacy)(uri "${KIPRJMOD}/Seeeduino XIAO KICAD/Seeeduino XIAO.lib")(options "")(descr ""))
+  (lib (name Switch_MagLev)(type Legacy)(uri ${KIPRJMOD}/MagLev_Switch/Switch_MagLev.lib)(options "")(descr ""))
+)

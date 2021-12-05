@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name MagLev_Switch)(type KiCad)(uri ${KIPRJMOD})(options "")(descr ""))
+)

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name Seeeduino_XIAO_KICAD)(type KiCad)(uri "${KIPRJMOD}/Seeeduino XIAO KICAD.pretty")(options "")(descr ""))
+  (lib (name MagLev_Switch)(type KiCad)(uri ${KJPRJMOD}/MagLev_Switch.pretty)(options "")(descr ""))
+)

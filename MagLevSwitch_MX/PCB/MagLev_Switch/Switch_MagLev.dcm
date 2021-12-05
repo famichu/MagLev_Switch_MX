@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MagLevSwitch
+D Magnetic levitation switches with a linear output hall effect sensor.
+K hall switch MX
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,57 @@
+#include <Arduino.h>
+#include <ArduinoSTL.h>
+#include <TinyUSB_Mouse_and_Keyboard.h>
+#include <TimerTC3.h>
+
+#include <key_board.h>
+#include <fet.h>
+
+#define PIN_ROW_0 0
+#define PIN_ROW_1 1
+#define PIN_ROW_2 2
+#define PIN_ROW_3 3
+#define PIN_ROW_4 4
+
+#define PIN_COL_0 A5
+#define PIN_COL_1 A6
+#define PIN_COL_2 A7
+#define PIN_COL_3 A8
+
+#define PULSE_FREQ 2000 // the frequency for scanning the state of swiches
+
+u_int8_t G_ROW_PINS[]   = {PIN_ROW_0, PIN_ROW_1, PIN_ROW_2, PIN_ROW_3, PIN_ROW_4}; // Pins connected to FETs
+u_int8_t G_COL_PINS[]   = {PIN_COL_0, PIN_COL_1, PIN_COL_2, PIN_COL_3}; // Pins connected to Key switchesu
+u_int8_t G_Key_Codes[][]  = {
+    {0x33, '/', '*', '-'}, 
+    {'7', '8', '9', '+'}, 
+    {'4', '5', '6'}, 
+    {'1', '2', '3', ENTER}, 
+    {'0', ',', '.'}};
+
+u_int8_t G_ROW_MAX = sizeof(G_ROWS); // The number of ROWS
+u_int8_t G_COL_MAX = sizeof(G_COLS); // The number of COLS
+
+Key_Board G_KEY_BOARD;
+std::vector<std::vector<Key_Switch>> G_KEY_SWITCHES;
+std::vector<FET> G_FETS;
+
+void setup() {
+    // put your setup code here, to run once:
+    std::vector<Key_Switch> key_line;
+    FET fet;
+    for(u_int8_t row = 0; row < sizeof(G_ROW_PINS); row++){
+        key_line.clear();
+        fet = new FET();
+        for(u_int8_t col = 0; col < sizeof(G_COL_PINS); col++){
+            Key_Switch key_switch = new Key_Switch(G_COL_PINS[col], G_Key_Codes[row][col], false, true, 512);
+            key_line.push_back(key_switch);
+        }
+        G_KEY_SWITCHES.push_back(key_line);
+    }
+
+    G_KEY_BOARD = new Key_Board();
+}
+
+void loop() {
+    // put your main code here, to run repeatedly:
+}
