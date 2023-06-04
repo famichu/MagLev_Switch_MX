@@ -6,8 +6,8 @@
 
 class KeySwitch{
 public:
-    KeySwitch(u_int8_t pin, char key_code, bool is_negative, bool use_analogout, int actuation_point);
-    // the case which use the key switch without actuation point
+    KeySwitch(u_int8_t pin, char key_code, bool is_negative, bool use_analogout, int* actuation_depth);
+    // the case which use the key switch without actuation depth
     KeySwitch(u_int8_t pin, char character_code, bool is_negative);
     // the case which use to make only instance
     KeySwitch();
@@ -16,9 +16,9 @@ public:
     void Keycode(char character_code);
     char Keycode(void);
 
-    // set and change / get the actuation point of the key switch
-    void ActuationPoint(int actuation_point);
-    int ActuationPoint(void);
+    // set and change / get the actuation depth of the key switch
+    void ActuationDepth(int* actuation_depth);
+    int ActuationDepth(void);
 
     // update the state of the key switch. recommend to call this method periodically.
     void UpdateState(void);
@@ -46,7 +46,7 @@ private:
     char        key_code_;
     bool        is_negative_;
     bool        use_analogout_;
-    int         actuation_point_;
+    int*        actuation_depth_;
 
     int         value_;
     int         state_;

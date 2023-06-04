@@ -8,7 +8,7 @@ The 3D printable magnetic levitation switch with the linear output hall effect s
 ## Features
 - Magnetic levitation axis
 - Non-contact switch
-- Linear output(adjustable trigger point)
+- Linear output(adjustable actuation depth)
 - Able to make with only 2 magnets and a hall sensor.
 - Compatible shape with Cherry MX switch
 
@@ -23,6 +23,7 @@ This method made the switch smaller, allowing it to have the same shape as exist
 ## BOM
 - PCB x1
 - Hall effect sensor IC A1304 x1
+- Pin header connector 1x1 x3
 - 5mm diameter x 2mm height magnet x2
 - Axis part(3D printerd) x1
 - Botton part(3D printerd) x1
@@ -48,14 +49,14 @@ Pins I had used are the usual pinheader. It's easy install with Soldering Jig in
 ## Features
 - Used Maglev Switches
 - This can use with usual Cherry MX switches also.
-- This keypad has a LED indicator and a volume for change the actuation point.
+- This keypad has a LED indicator and a volume for change the actuation depth.
 
 ## BOM
 - PCB x1
 - MagLev Switch MX x18
 - Seeeduino Xiao x1
 - Linear(B type) 10k Ohm Rotary potentiometers x1
-- Bloadcom LED bar graph HDSP-4850  x1
+- Broadcom LED bar graph HDSP-4850  x1
 - Case bottom(3D printed) x1
 - Case plate(3D printed) x1
 - Case top(3D printed) x1

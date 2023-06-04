@@ -1,21 +1,21 @@
 #include <key_switch.h>
 
-KeySwitch::KeySwitch(u_int8_t pin, char key_code, bool is_negative, bool use_analogout, int actuation_point){
+KeySwitch::KeySwitch(u_int8_t pin, char key_code, bool is_negative, bool use_analogout, int* actuation_depth){
     pin_                = pin;
     key_code_           = key_code;
     is_negative_        = is_negative;
     use_analogout_      = use_analogout;
-    actuation_point_    = actuation_point;
+    actuation_depth_    = actuation_depth;
 
     pinMode(pin_, INPUT);
 }
 
-// the case which use the key switch without actuation point
+// the case which use the key switch without actuation depth
 KeySwitch::KeySwitch(u_int8_t pin, char key_code, bool is_negative){
     pin_                = pin;
     key_code_           = key_code;
     is_negative_        = is_negative;
-    actuation_point_    = 512;
+    *actuation_depth_   = 512;
 }
 
 // the case which use to make only instance
@@ -32,14 +32,14 @@ char KeySwitch::Keycode(void){
     return key_code_;
 }
 
-// set or change the actuation point of the key switch
-void KeySwitch::ActuationPoint(int actuation_point){
-    actuation_point_ = actuation_point;
+// set or change the actuation depth of the key switch
+void KeySwitch::ActuationDepth(int* actuation_depth){
+    actuation_depth_ = actuation_depth;
 }
 
-// return the set actuation point
-int KeySwitch::ActuationPoint(void){
-    return actuation_point_;
+// return the set actuation depth
+int KeySwitch::ActuationDepth(void){
+    return *actuation_depth_;
 }
 
 // update the state of the key switch. recommend to call this method periodically.
@@ -53,13 +53,13 @@ void KeySwitch::UpdateState(void){
     state_          = 0;
 
     if(is_negative_ == true){
-        if(value_ <= actuation_point_){
+        if(value_ <= *actuation_depth_){
             is_pushed_  = true;
             state_      |= STATE_PUSHED;
         }
     }
     else{
-        if(value_ >= actuation_point_){
+        if(value_ >= *actuation_depth_){
             is_pushed_  = true;
             state_      |= STATE_PUSHED;
         }
