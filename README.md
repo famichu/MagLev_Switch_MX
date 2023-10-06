@@ -3,7 +3,7 @@
 <img src="./img/MagLevSwitch_MX.jpg" width="500px" a="MagLev Swich MX">
 
 ## Summary
-The 3D printable magnetic levitation switch with the linear output hall effect sensor. The shape of this swich is compatable with the Cherry MX switch.
+These 3D printable switches have linear output hall effect sensors with magnetic levitation switches. The shape of this swich is compatable with the Cherry MX switch.
 
 ## Features
 - Magnetic levitation axis
@@ -13,11 +13,11 @@ The 3D printable magnetic levitation switch with the linear output hall effect s
 - Compatible shape with Cherry MX switch
 
 ## Structure
-Most of MagLev switches are not using hall effect sensors. I think this is because the magnetism is too strong or the distance from the magnet is too close to detect. Therefore I implemented with new method that by sandwiching hall effect sensor between two magnets used instead of a spring.
+Most MagLev switches don't use hall effect sensors. I think this is because the magnetism is too strong or the distance from the magnet is too close to for the sensor to detect. Therefore I implemented with new method that by sandwiching the hall effect sensor between two magnets instead of using springs.
 
 <img src="./img/cross_section.drawio.png" width="500px" alt="Using SLA(LCD) type of 3D printer">
 
-When the axis was pushed, the magnetism will be canceled each other out, magnetism detected by hall effect sensor approaches zero. This is how this switch works.
+When the axis is pushed, the magnetism will cancel each other out, which causes the magnetism detected by hall effect sensor to become zero. This is how this switch works.
 This method made the switch smaller, allowing it to have the same shape as existing switches.
 
 ## BOM
@@ -31,8 +31,8 @@ This method made the switch smaller, allowing it to have the same shape as exist
 - Soldering jig(3D printed) x1(Optional)
 
 ### About the magnet and the hall effect sensor
-Dimensions of the magnet used to those models are 5mm diameter and 2mm thickness neodymium magnet. I had used with [this magnet](https://www.amazon.co.jp/gp/product/B08MJH42VK/).
-The hall effect sensor I had used is [A1304](https://www.allegromicro.com/~/media/Files/Datasheets/A1304-Datasheet.ashx) of Allegro MicroSystems.
+The dimensions of the magnet used to make these models are 5mm diameter and 2mm thickness neodymium magnets. I used [this magnet](https://www.amazon.co.jp/gp/product/B08MJH42VK/).
+The hall effect sensor I used is [A1304](https://www.allegromicro.com/~/media/Files/Datasheets/A1304-Datasheet.ashx) from Allegro MicroSystems.
 
 ## 3D Printing
 I recommend to use SLA or DLP printer to print the body of the switches. And the recommended printing direction is the angle at which the groove is parallel to the platform.
@@ -40,7 +40,7 @@ I recommend to use SLA or DLP printer to print the body of the switches. And the
 
 ## PCB
 The PCB of this switch is manufactuable with single layer. But I recommend a load-bearing double layer PCB. 
-Pins I had used are the usual pinheader. It's easy install with Soldering Jig included in this repositry.
+Pins I used are the usual pinheaders. They're easy install with this Soldering Jig included in the repositry.
 <img src="./img/soldering.jpg" width="500px" alt="Solodering with jig">
 
 # Sample Numeric Keypad
@@ -48,8 +48,8 @@ Pins I had used are the usual pinheader. It's easy install with Soldering Jig in
 
 ## Features
 - Used Maglev Switches
-- This can use with usual Cherry MX switches also.
-- This keypad has a LED indicator and a volume for change the actuation depth.
+- Also useable with common Cherry MX switch types.
+- This keypad has an LED indicator and a volume for changing the actuation depth.
 
 ## BOM
 - PCB x1
@@ -63,7 +63,7 @@ Pins I had used are the usual pinheader. It's easy install with Soldering Jig in
 - Volume cap(3D printed) x1
 
 ### PCB
-If you make the sample numeric keypad, **you need to download KiCAD libraries from [Seeed Wiki](https://wiki.seeedstudio.com/Seeeduino-XIAO/#resourses)**. 
+If you want to make the sample numeric keypad, **you'll need to download KiCAD libraries from [Seeed Wiki](https://wiki.seeedstudio.com/Seeeduino-XIAO/#resourses)**. 
 Then put the "Seeeduino XIAO KICAD" directory and the "Seeeduino XIAO KICAD.pretty" directory under the "Sample_Numeric_Keypad\PCB" directory.
 
 
